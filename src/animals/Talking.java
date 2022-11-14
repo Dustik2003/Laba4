@@ -1,5 +1,5 @@
 package animals;
 
 public interface Talking {
-    public  void talk(String talk);
+    void talk(String talk);
 }

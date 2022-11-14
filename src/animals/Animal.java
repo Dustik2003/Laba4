@@ -8,6 +8,10 @@ public abstract class Animal implements Talking, Growing {
     private String name;
     private int age;
 
+    public void setAge(int age)throws AgeException {
+        if(age<0)throw new AgeException("Age can't be less than zero");
+        this.age = age;
+    }
 
     public  void talk(String talk){
         System.out.println(this.getName() +" : \" "+ talk+"\"");

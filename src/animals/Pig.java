@@ -1,9 +1,11 @@
 package animals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Pig extends Animal{
-    ArrayList<Feels> feels=new ArrayList<>();
+    ArrayList<Feels> feels=new ArrayList<>(Arrays.asList(Feels.LOST, Feels.WORRIED));
+
     public Pig(Colors clr, String name, int age){
         super(clr,name,age);
     }
@@ -12,11 +14,12 @@ public class Pig extends Animal{
         return feels;
     }
 
-    public void feel(Feels[] feel) {
+    public void feel(ArrayList<Feels> feel) {
         System.out.print("***Объект "+this.getClass()+" с именем "+this.getName()+" имеет чувства ");
-        for (int i = 0; feel.length > i; i++) {
-            this.feels.add(feel[i]);
-            if(i!= feel.length-1){
+        int size= feel.size();
+        for (int i = 0; i<size; i++) {
+            this.feels.add(feel.get(i));
+            if(i!= size-1){
             System.out.print(feels.get(i).getFeel()+", ");}
             else {
                 System.out.println(feels.get(i).getFeel() + ".");
