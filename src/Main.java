@@ -1,15 +1,21 @@
 import animals.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Donkey ia= new Donkey(Colors.RED,"ИА",10);
-        Bear puh= new Bear(Colors.BLUE,"ПУХ",10,"Другой берег");
-        try{
+    public static void main(String[] args) throws AgeException {
+        Donkey ia=new Donkey();
+        Bear puh=new Bear();
+        Pig pyatachok=new Pig();
+        try {
+            ia= new Donkey(Colors.RED,"ИА",10);
+            puh= new Bear(Colors.BLUE,"ПУХ",10,"Другой берег");
+            pyatachok= new Pig(Colors.GREEN,"Пятачок",10);
             puh.setAge(-9);
         }catch (AgeException ex){
+            ia= new Donkey(Colors.RED,"ИА");
+            puh= new Bear(Colors.BLUE,"ПУХ");
+            pyatachok= new Pig(Colors.GREEN,"Пятачок");
             System.out.println(ex);
         }
-        Pig pyatachok= new Pig(Colors.GREEN,"Пятачок",10);
         System.out.println("Сегодня день рождения "+ia.getName());
         System.out.println("ИА "+ia.getAge()+" лет");
         System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");

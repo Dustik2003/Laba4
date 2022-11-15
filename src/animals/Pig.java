@@ -6,7 +6,11 @@ import java.util.Arrays;
 public class Pig extends Animal{
     ArrayList<Feels> feels=new ArrayList<>(Arrays.asList(Feels.LOST, Feels.WORRIED));
 
-    public Pig(Colors clr, String name, int age){
+    public Pig(){}
+    public Pig(Colors clr, String name){
+        super(clr,name);
+    }
+    public Pig(Colors clr, String name, int age) throws AgeException {
         super(clr,name,age);
     }
 
@@ -19,11 +23,7 @@ public class Pig extends Animal{
         int size= feel.size();
         for (int i = 0; i<size; i++) {
             this.feels.add(feel.get(i));
-            if(i!= size-1){
-            System.out.print(feels.get(i).getFeel()+", ");}
-            else {
-                System.out.println(feels.get(i).getFeel() + ".");
-            }
+            System.out.print(i!= size-1?feels.get(i).getFeel()+", ":feels.get(i).getFeel() + ".");
         }
     }
 }

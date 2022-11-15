@@ -19,7 +19,12 @@ public class Donkey extends Animal{
             else System.out.println(this.gifts.get(i));
         }}
 
-    public Donkey(Colors clr, String name,int age){
+    public Donkey(Colors clr, String name,int age) throws AgeException {
         super(clr,name,age);
+    }
+    public Donkey(Colors clr, String name){
+        super(clr,name);
+    }
+    public Donkey(){
     }
 }

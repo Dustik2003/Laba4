@@ -7,7 +7,11 @@ public class Bear extends Animal{
         return location;
     }
 
-    public Bear(Colors clr, String name, int age,String location){
+    public Bear(){}
+    public Bear(Colors clr, String name){
+        super(clr,name);
+    }
+    public Bear(Colors clr, String name, int age,String location) throws AgeException {
         super(clr,name,age);
         this.location=location;
     }
