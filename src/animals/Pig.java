@@ -10,7 +10,7 @@ public class Pig extends Animal{
     public Pig(Colors clr, String name){
         super(clr,name);
     }
-    public Pig(Colors clr, String name, int age) throws AgeException {
+    public Pig(Colors clr, String name, int age) throws PositiveAgeException {
         super(clr,name,age);
     }
 

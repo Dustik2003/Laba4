@@ -1,7 +1,6 @@
 package animals;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Donkey extends Animal{
 
@@ -15,11 +14,11 @@ public class Donkey extends Animal{
     public void printgifts(){
         System.out.println("Подарки "+this.getName()+" :");
         for (int i=0;i<=this.gifts.size();i++){
-            if(i>=this.gifts.size()) throw new PrizesException("Count of gifts less than value of iterator");
+            if(i>=this.gifts.size()) throw new PrizesCounterException("Count of gifts less than value of iterator");
             else System.out.println(this.gifts.get(i));
         }}
 
-    public Donkey(Colors clr, String name,int age) throws AgeException {
+    public Donkey(Colors clr, String name,int age) throws PositiveAgeException {
         super(clr,name,age);
     }
     public Donkey(Colors clr, String name){

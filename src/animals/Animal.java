@@ -9,8 +9,8 @@ public abstract class Animal implements Talking, Growing {
     private int age;
 
 
-    public void setAge(int age)throws AgeException {
-        if(age<0)throw new AgeException("Age can't be less than zero");
+    public void setAge(int age)throws PositiveAgeException {
+        if(age<0)throw new PositiveAgeException("Age can't be less than zero");
         this.age = age;
     }
 
@@ -66,10 +66,10 @@ public abstract class Animal implements Talking, Growing {
         this.favclr=clr;
         this.name=name;
     }
-    public Animal(Colors clr, String name, int age)throws AgeException{
+    public Animal(Colors clr, String name, int age)throws PositiveAgeException {
         this.favclr=clr;
         this.name=name;
-        if(age<0)throw new AgeException("Age can't be less than zero");
+        if(age<0)throw new PositiveAgeException("Age can't be less than zero");
         this.age = age;
     }
 }

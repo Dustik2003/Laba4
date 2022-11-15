@@ -11,7 +11,7 @@ public class Bear extends Animal{
     public Bear(Colors clr, String name){
         super(clr,name);
     }
-    public Bear(Colors clr, String name, int age,String location) throws AgeException {
+    public Bear(Colors clr, String name, int age,String location) throws PositiveAgeException {
         super(clr,name,age);
         this.location=location;
     }

@@ -1,7 +1,7 @@
 import animals.*;
 
 public class Main {
-    public static void main(String[] args) throws AgeException {
+    public static void main(String[] args) throws PositiveAgeException {
         Donkey ia=new Donkey();
         Bear puh=new Bear();
         Pig pyatachok=new Pig();
@@ -10,7 +10,7 @@ public class Main {
             puh= new Bear(Colors.BLUE,"ПУХ",10,"Другой берег");
             pyatachok= new Pig(Colors.GREEN,"Пятачок",10);
             puh.setAge(-9);
-        }catch (AgeException ex){
+        }catch (PositiveAgeException ex){
             ia= new Donkey(Colors.RED,"ИА");
             puh= new Bear(Colors.BLUE,"ПУХ");
             pyatachok= new Pig(Colors.GREEN,"Пятачок");
@@ -26,7 +26,7 @@ public class Main {
         ia.receivinggift("Хвост");
         try{
             ia.printgifts();
-        }catch (PrizesException ex){
+        }catch (PrizesCounterException ex){
             System.out.println(ex);
         }
         ia.talk("Подумать только! "+ia.getFavclr()+"... Мой любимый цвет");
