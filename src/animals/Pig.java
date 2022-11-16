@@ -23,7 +23,7 @@ public class Pig extends Animal{
         int size= feel.size();
         for (int i = 0; i<size; i++) {
             this.feels.add(feel.get(i));
-            System.out.print(i!= size-1?feels.get(i).getFeel()+", ":feels.get(i).getFeel() + ".");
+            System.out.print(i!= size-1?feels.get(i).getFeel()+", ":feels.get(i).getFeel() + ".\n");
         }
     }
 }

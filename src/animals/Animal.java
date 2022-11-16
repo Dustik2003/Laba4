@@ -9,13 +9,37 @@ public abstract class Animal implements Talking, Growing {
     private int age;
 
 
+    public Animal(){
+    }
+    public Animal(Colors clr){
+        this.favclr=clr;
+    }
+    public Animal(Colors clr,int age){
+        this.favclr=clr;
+        this.age=age;
+    }
+    public Animal(Colors clr, String name){
+        this.favclr=clr;
+        this.name=name;
+    }
+    public Animal(Colors clr, String name, int age)throws PositiveAgeException {
+        this.favclr=clr;
+        this.name=name;
+        if(age<0)throw new PositiveAgeException("Age can't be less than zero");
+        this.age = age;
+    }
     public void setAge(int age)throws PositiveAgeException {
         if(age<0)throw new PositiveAgeException("Age can't be less than zero");
         this.age = age;
     }
 
     public  void talk(String talk){
-        System.out.println(this.getName() +" : \" "+ talk+"\"");
+        try {
+            System.out.println(this.getName() +" : \" "+ talk+"\"");
+        }catch (NullNameException ex){
+            System.out.println(ex);
+        }
+
     }
 
     @Override
@@ -34,7 +58,10 @@ public abstract class Animal implements Talking, Growing {
 
 
     public String getName() {
-        return name;
+        if(this.name==null){
+            throw new NullNameException("Object wasn't named");
+        }
+        else return name;
     }
 
     @Override
@@ -59,17 +86,4 @@ public abstract class Animal implements Talking, Growing {
                 '}';
     }
 
-    public Animal(){
-
-    }
-    public Animal(Colors clr, String name){
-        this.favclr=clr;
-        this.name=name;
-    }
-    public Animal(Colors clr, String name, int age)throws PositiveAgeException {
-        this.favclr=clr;
-        this.name=name;
-        if(age<0)throw new PositiveAgeException("Age can't be less than zero");
-        this.age = age;
-    }
 }
