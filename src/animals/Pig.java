@@ -6,7 +6,14 @@ import java.util.Arrays;
 public class Pig extends Animal{
     ArrayList<Feels> feels=new ArrayList<>(Arrays.asList(Feels.LOST, Feels.WORRIED));
 
-    public Pig(){}
+    public Pig(Colors favclr, String name, int age, String thing) {
+        super(favclr, name, age, thing);
+    }
+
+    public Pig(Colors favclr, String name, String thing) {
+        super(favclr, name, thing);
+    }
+
     public Pig(Colors clr, String name){
         super(clr,name);
     }

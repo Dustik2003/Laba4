@@ -6,10 +6,9 @@ public class Main {
         Bear puh;
         Pig pyatachok;
         try {
-            ia= new Donkey(Colors.RED,10);
-            puh= new Bear(Colors.BLUE,"ПУХ",10,"Другой берег");
+            ia= new Donkey(Colors.RED,"ИА",10);
+            puh= new Bear(Colors.BLUE,"ПУХ",10,"Мёд","Другой берег");
             pyatachok= new Pig(Colors.GREEN,"Пятачок",10);
-            puh.setAge(-9);
         }catch (PositiveAgeException ex){
             ia= new Donkey(Colors.RED);
             puh= new Bear(Colors.BLUE,"ПУХ","Другой берег");
@@ -38,6 +37,7 @@ public class Main {
         ia.receivingGift("Гвоздь");
         ia.receivingGift("Хвост");
         ia.printGifts();
+        ia.changeFavThing(ia.getGifts().get(2));
         ia.talk("Подумать только! "+ia.getFavclr()+"... Мой любимый цвет");
         pyatachok.feel(pyatachok.getFeels());
         pyatachok.talk("(ಠ_ಠ) (ಠ_ಠ) (ಠ_ಠ) ");

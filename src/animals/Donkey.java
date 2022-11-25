@@ -8,17 +8,26 @@ public class Donkey extends Animal{
     public Donkey(Colors clr){
         super(clr);
 
-    }    public Donkey(Colors clr, String name,int age) throws PositiveAgeException {
+    }
+    public Donkey(Colors clr, String name,int age) throws PositiveAgeException {
         super(clr,name,age);
     }
+
+    public Donkey(Colors favclr, String name, int len, String thing) {
+        super(favclr, name, len, thing);
+    }
+
+    public Donkey(Colors favclr, String name, String thing) {
+        super(favclr, name, thing);
+    }
+
     public Donkey(Colors clr,int age){
         super(clr, age);
     }
     public Donkey(Colors clr, String name){
         super(clr,name);
     }
-    public Donkey(){
-    }
+
 
     public void receivingGift(String gift){
         try {
@@ -39,5 +48,7 @@ public class Donkey extends Animal{
             System.out.println(this.gifts.get(i));
         }}
 
-
+    public ArrayList<String> getGifts() {
+        return gifts;
+    }
 }
