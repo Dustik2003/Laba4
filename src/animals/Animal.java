@@ -8,7 +8,7 @@ public abstract class Animal implements Talking, Growing {
     private String name;
     private int age=1;
     private Tail tail=new Tail(age);
-    private FavThing favThing =new FavThing();
+    private FavThing favThing  =new FavThing();
 
 
     public Animal(Colors favclr, String name, int age, int len, String thing){

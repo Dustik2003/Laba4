@@ -48,6 +48,7 @@ public class Main {
         puh.talk("А у меня "+puh.hashCode());
         System.out.println("\n\n");
         System.out.println(puh);
+
         System.out.println(pyatachok);
         System.out.println(ia);
     }
