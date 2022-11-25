@@ -8,7 +8,7 @@ public abstract class Animal implements Talking, Growing {
     private String name;
     private int age=1;
     private Tail tail=new Tail(age);
-    private FavThing favThing  =new FavThing();
+    private FavThing favThing =new FavThing();
 
 
     public Animal(Colors favclr, String name, int age, int len, String thing){
@@ -99,25 +99,34 @@ public abstract class Animal implements Talking, Growing {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Animal animal = (Animal) o;
-        return age == animal.age && favclr == animal.favclr && name.equals(animal.name);
+        return age == animal.age && favclr == animal.favclr && name.equals(animal.name) && Objects.equals(tail, animal.tail) && Objects.equals(favThing, animal.favThing);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(favclr, name, age);
+        return Objects.hash(favclr, name, age, tail, favThing);
     }
 
     @Override
     public String toString() {
-        return getClass() +
-                " { favclr=" + favclr +
+        return "Animal{" +
+                "favclr=" + favclr +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", tail=" + tail +
+                ", favThing=" + favThing +
                 '}';
     }
 
     class Tail{
         int len=age;
+
+        @Override
+        public String toString() {
+            return "Tail{" +
+                    "len=" + len +
+                    '}';
+        }
 
         public Tail(int age) {
             this.len=age;
@@ -126,6 +135,12 @@ public abstract class Animal implements Talking, Growing {
     static class FavThing{
         String name;
 
+        @Override
+        public String toString() {
+            return "FavThing{" +
+                    "name='" + name + '\'' +
+                    '}';
+        }
     }
 
     public FavThing getFavThing() {

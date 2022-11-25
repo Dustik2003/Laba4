@@ -2,7 +2,7 @@
   <artifact type="jar" name="Laba3(СППО):jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Laba3___jar</output-path>
     <root id="archive" name="Laba3(СППО).jar">
-      <element id="module-output" name="Laba3(СППО)" />
+      <element id="module-output" name="Laba4java" />
     </root>
   </artifact>
 </component>
